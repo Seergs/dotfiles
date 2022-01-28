@@ -66,19 +66,19 @@ Plug 'williamboman/nvim-lsp-installer'
 Plug 'j-hui/fidget.nvim'
 
 " Tree finder
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'kyazdani42/nvim-tree.lua'
 
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
-let NERDTreeMinimalUI=1
+" let NERDTreeQuitOnOpen=1
+" let NERDTreeShowHidden=1
+" let NERDTreeMinimalUI=1
 
-let g:NERDTreeDirArrowExpandable = '▹'
-let g:NERDTreeDirArrowCollapsible = '▿'
+" let g:NERDTreeDirArrowExpandable = '▹'
+" let g:NERDTreeDirArrowCollapsible = '▿'
 
-" nmap <Leader>n :NERDTreeToggle<CR>
-nnoremap <expr> <leader>n g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
-nmap <leader>N :NERDTreeFind<CR>
+" nnoremap <expr> <leader>n g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+" nmap <leader>N :NERDTreeFind<CR>
 
 
 " Init dashboard

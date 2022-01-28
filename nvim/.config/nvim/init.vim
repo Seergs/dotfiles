@@ -15,6 +15,7 @@ doautocmd User PlugLoaded
 lua <<EOF
 require('lualine').setup()
 require('bufferline').setup()
+require('nvim-tree').setup()
 require('completion')
 require('lsp')
 require('treesitter')

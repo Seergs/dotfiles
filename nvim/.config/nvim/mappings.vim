@@ -16,7 +16,7 @@ vnoremap y myy`y
 vnoremap Y myY`y
 
 " Paste replace visual selection without copying it
-vnoremap <leader>p "_dP
+vnoremap p "_dP
 
 " Open the current file in the default program
 nmap <leader>x :!xdg-open %<cr><cr>
@@ -33,3 +33,5 @@ nmap <leader>2 :bfirst<CR>:bn<CR>
 nmap <leader>3 :bfirst<CR>:2bn<CR>
 nmap <leader>4 :bfirst<CR>:3bn<CR>
 nmap <leader>5 :bfirst<CR>:4bn<CR>
+
+nmap <leader>n :NvimTreeToggle <CR>
