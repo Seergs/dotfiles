@@ -5,3 +5,4 @@ end
 
 require'lsp.lsp-installer'
 require'lsp.handlers'.setup()
+require'fidget'.setup{}

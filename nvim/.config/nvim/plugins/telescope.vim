@@ -7,6 +7,6 @@ nnoremap <leader>f <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap gr <cmd>Telescope lsp_references<cr>
 nnoremap gi <cmd>Telescope lsp_implementations<cr>
-" nnoremap gi <cmd>Telescope lsp_code_actions<cr>
-" nnoremap gi <cmd>Telescope diagnostics<cr>
+nnoremap <leader>ca <cmd>Telescope lsp_code_actions<cr>
+nnoremap <leader>dl <cmd>Telescope diagnostics<cr>
 nnoremap gd <cmd>Telescope lsp_definitions<cr>
