@@ -1,3 +1,11 @@
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.config/nvim/autoload/plugged')
+
 " Statusline
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -48,7 +56,8 @@ Plug 'saadparwaiz1/cmp_luasnip'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'rhysd/committia.vim'
 
 " Markdown
@@ -66,19 +75,10 @@ Plug 'williamboman/nvim-lsp-installer'
 Plug 'j-hui/fidget.nvim'
 
 " Tree finder
-" Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kyazdani42/nvim-tree.lua'
 
-" let NERDTreeQuitOnOpen=1
-" let NERDTreeShowHidden=1
-" let NERDTreeMinimalUI=1
-
-" let g:NERDTreeDirArrowExpandable = '▹'
-" let g:NERDTreeDirArrowCollapsible = '▿'
-
-" nnoremap <expr> <leader>n g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
-" nmap <leader>N :NERDTreeFind<CR>
+let g:nvim_tree_quit_on_open = 1
 
 
 " Init dashboard
@@ -108,10 +108,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Color scheme
 Plug 'embark-theme/vim', {'as': 'embark', 'branch': 'main'}
-augroup ThemeOverrides
-  autocmd!
-  autocmd User PlugLoaded ++nested colorscheme embark
-augroup end
+Plug 'sainnhe/everforest'
+
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -120,3 +118,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'frazrepo/vim-rainbow'
 
 let g:rainbow_active=1
+
+call plug#end()
+
+set background=dark
+colorscheme everforest
