@@ -1,0 +1,37 @@
+local options = {
+  number = true,
+  mouse = "a",
+  clipboard = "unnamedplus",
+  showcmd = true,
+  ruler = true,
+  cursorline = true,
+  encoding = "utf-8",
+  showmatch = true,
+  sw = 2,
+  hidden = true,
+  backup = false,
+  writebackup = false,
+  cmdheight = 2,
+  updatetime = 300,
+  shortmess = "c",
+  laststatus = 2,
+  showmode = false,
+  scrolloff = 10,
+  sidescrolloff = 10,
+  ignorecase= true,
+  swapfile = false,
+  errorbells = false,
+  splitright = true,
+  splitbelow = true,
+  linespace = 5,
+  signcolumn = "number",
+  termguicolors = true,
+  expandtab = true,
+  smartindent = true,
+  relativenumber = true,
+  colorcolumn = "80",
+}
+
+for k, v in pairs(options) do
+	vim.opt[k] = v
+end
