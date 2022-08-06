@@ -26,10 +26,15 @@ local options = {
   linespace = 5,
   signcolumn = "number",
   termguicolors = true,
-  expandtab = true,
-  smartindent = true,
   relativenumber = true,
   colorcolumn = "80",
+
+  guicursor = "",
+  tabstop = 4,
+  softtabstop= 4,
+  shiftwidth = 4,
+  expandtab = true,
+  smartindent = true,
 }
 
 for k, v in pairs(options) do

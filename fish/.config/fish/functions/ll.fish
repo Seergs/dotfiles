@@ -1,3 +1,3 @@
 function ll
- exa --long --header --color=always --icons --all --no-permissions --no-user --git-ignore
+ exa --long --header --color=always --icons --all --no-permissions --no-user
 end

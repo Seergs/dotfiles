@@ -2,12 +2,12 @@
 # VERSION: 3.0
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/Users/sergio/\x2elocal/share/z/data
-SETUVAR Z_DATA_DIR:/Users/sergio/\x2elocal/share/z
-SETUVAR Z_EXCLUDE:\x5e/Users/sergio\x24
-SETUVAR __fish_initialized:3100
+SETUVAR Z_DATA:/Users/sergiosuarez/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:/Users/sergiosuarez/\x2elocal/share/z
+SETUVAR Z_EXCLUDE:\x5e/Users/sergiosuarez\x24
+SETUVAR __fish_initialized:3400
 SETUVAR __git_plugin_abbreviations:g\x1ega\x1egaa\x1egau\x1egapa\x1egap\x1egb\x1egba\x1egban\x1egbd\x1egbD\x1egbl\x1egbs\x1egbsb\x1egbsg\x1egbsr\x1egbss\x1egc\x1egc\x21\x1egcn\x21\x1egca\x1egca\x21\x1egcan\x21\x1egcv\x1egcav\x1egcav\x21\x1egcm\x1egcam\x1egscam\x1egcfx\x1egcf\x1egcl\x1egclean\x1egclean\x21\x1egclean\x21\x21\x1egcount\x1egcp\x1egcpa\x1egcpc\x1egd\x1egdca\x1egds\x1egdsc\x1egdw\x1egdwc\x1egdto\x1egignore\x1egf\x1egfa\x1egfm\x1egfo\x1egl\x1egll\x1eglr\x1eglg\x1eglgg\x1eglgga\x1eglo\x1eglog\x1egloga\x1eglom\x1eglod\x1egloo\x1egm\x1egmt\x1egmom\x1egp\x1egp\x21\x1egpo\x1egpo\x21\x1egpv\x1egpv\x21\x1eggp\x21\x1egpu\x1egr\x1egra\x1egrb\x1egrba\x1egrbc\x1egrbi\x1egrbm\x1egrbmi\x1egrbmia\x1egrbd\x1egrbdi\x1egrbdia\x1egrbs\x1egrev\x1egrh\x1egrhh\x1egrhpa\x1egrm\x1egrmc\x1egrmv\x1egrpo\x1egrrm\x1egrs\x1egrset\x1egrss\x1egrst\x1egrup\x1egrv\x1egsh\x1egsd\x1egsr\x1egss\x1egst\x1egsta\x1egstd\x1egstl\x1egstp\x1egsts\x1egsu\x1egsur\x1egsuri\x1egts\x1egtv\x1egsw\x1egswc\x1egunignore\x1egup\x1egupv\x1egupa\x1egupav\x1egwch\x1egco\x1egcb\x1egcod\x1egcom\x1egfb\x1egff\x1egfr\x1egfh\x1egfs\x1egfbs\x1egffs\x1egfrs\x1egfhs\x1egfss\x1egfbt\x1egfft\x1egfrt\x1egfht\x1egfst\x1egfp
-SETUVAR __git_plugin_initialized:Fri\x20Apr\x2022\x2020\x3a55\x3a31\x20CDT\x202022
+SETUVAR __git_plugin_initialized:Mon\x20Apr\x2025\x2016\x3a03\x3a19\x20CDT\x202022
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gaa:git\x20add\x20\x2d\x2dall
@@ -153,13 +153,13 @@ SETUVAR _fish_abbr_gupa:git\x20pull\x20\x2d\x2drebase\x20\x2d\x2dautostash
 SETUVAR _fish_abbr_gupav:git\x20pull\x20\x2d\x2drebase\x20\x2d\x2dautostash\x20\x2dv
 SETUVAR _fish_abbr_gupv:git\x20pull\x20\x2d\x2drebase\x20\x2dv
 SETUVAR _fish_abbr_gwch:git\x20whatchanged\x20\x2dp\x20\x2d\x2dabbrev\x2dcommit\x20\x2d\x2dpretty\x3dmedium
-SETUVAR _fisher_catppuccin_2F_fish_files:/Users/sergio/\x2econfig/fish/conf\x2ed/catppuccin\x2efish
-SETUVAR _fisher_jethrokuan_2F_z_files:/Users/sergio/\x2econfig/fish/functions/__z\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/__z_add\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/__z_clean\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/__z_complete\x2efish\x1e/Users/sergio/\x2econfig/fish/conf\x2ed/z\x2efish
-SETUVAR _fisher_jhillyerd_2F_plugin_2D_git_files:/Users/sergio/\x2econfig/fish/functions/__git\x2ebranch_has_wip\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/__git\x2ecurrent_branch\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/__git\x2edefault_branch\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/__git\x2edestroy\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/__git\x2einit\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/__git\x2ereset\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/gbage\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/gbda\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/gdt\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/gdv\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/ggl\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/ggp\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/ggpnp\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/ggsup\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/ggu\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/gignored\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/glp\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/gpoat\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/grename\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/grt\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/gtl\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/gunwip\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/gwip\x2efish\x1e/Users/sergio/\x2econfig/fish/conf\x2ed/git\x2efish
+SETUVAR _fisher_catppuccin_2F_fish_files:/Users/sergiosuarez/\x2econfig/fish/conf\x2ed/catppuccin\x2efish
+SETUVAR _fisher_jethrokuan_2F_z_files:/Users/sergiosuarez/\x2econfig/fish/functions/__z\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/__z_add\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/__z_clean\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/__z_complete\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/conf\x2ed/z\x2efish
+SETUVAR _fisher_jhillyerd_2F_plugin_2D_git_files:/Users/sergiosuarez/\x2econfig/fish/functions/__git\x2ebranch_has_wip\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/__git\x2ecurrent_branch\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/__git\x2edefault_branch\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/__git\x2edestroy\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/__git\x2einit\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/__git\x2ereset\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/gbage\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/gbda\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/gdt\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/gdv\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/ggl\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/ggp\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/ggpnp\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/ggsup\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/ggu\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/gignored\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/glp\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/gpoat\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/grename\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/grt\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/gtl\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/gunwip\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/gwip\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/conf\x2ed/git\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/sergio/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/sergio/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_joseluisq_2F_gitnow_40_32_2E_31_30_2E_30__files:/Users/sergio/\x2econfig/fish/functions/__gitnow_config_file\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/__gitnow_functions\x2efish\x1e/Users/sergio/\x2econfig/fish/functions/__gitnow_manual\x2efish\x1e/Users/sergio/\x2econfig/fish/conf\x2ed/gitnow\x2efish\x1e/Users/sergio/\x2econfig/fish/conf\x2ed/gitnow_config\x2efish\x1e/Users/sergio/\x2econfig/fish/completions/__gitnow_completions\x2efish
-SETUVAR _fisher_mattgreen_2F_lucid_2E_fish_files:/Users/sergio/\x2econfig/fish/functions/fish_prompt\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejethrokuan/z\x1emattgreen/lucid\x2efish\x1ecatppuccin/fish\x1ejoseluisq/gitnow\x402\x2e10\x2e0\x1ejhillyerd/plugin\x2dgit
+SETUVAR _fisher_joseluisq_2F_gitnow_40_32_2E_31_30_2E_30__files:/Users/sergiosuarez/\x2econfig/fish/functions/__gitnow_config_file\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/__gitnow_functions\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/functions/__gitnow_manual\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/conf\x2ed/gitnow\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/conf\x2ed/gitnow_config\x2efish\x1e/Users/sergiosuarez/\x2econfig/fish/completions/__gitnow_completions\x2efish
+SETUVAR _fisher_mattgreen_2F_lucid_2E_fish_files:/Users/sergiosuarez/\x2econfig/fish/functions/fish_prompt\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1emattgreen/lucid\x2efish\x1ecatppuccin/fish\x1ejoseluisq/gitnow\x402\x2e10\x2e0\x1ejhillyerd/plugin\x2dgit\x1ejethrokuan/z
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
@@ -187,3 +187,4 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr

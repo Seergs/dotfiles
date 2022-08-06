@@ -1,7 +1,9 @@
 local fn = vim.fn
 
-local install_path = fn.stdpath("data") .. "~/.local/share/nvim/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+print(install_path)
 if fn.empty(fn.glob(install_path)) > 0 then
+  print("Hello")
   PACKER_BOOTSTRAP = fn.system({
     "git",
     "clone",
@@ -91,6 +93,13 @@ return packer.startup(function(use)
   use('frazrepo/vim-rainbow')
 
   use("karb94/neoscroll.nvim")
+
+  -- install without yarn or npm
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
