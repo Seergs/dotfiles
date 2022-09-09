@@ -64,7 +64,6 @@ return packer.startup(function(use)
   use('saadparwaiz1/cmp_luasnip')
 
   use('tpope/vim-fugitive')
-  use('lewis6991/gitsigns.nvim')
   use('rhysd/committia.vim')
 
   use('neovim/nvim-lspconfig')
@@ -99,6 +98,8 @@ return packer.startup(function(use)
       "iamcco/markdown-preview.nvim",
       run = function() vim.fn["mkdp#util#install"]() end,
   })
+
+  use 'shaunsingh/nord.nvim'
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

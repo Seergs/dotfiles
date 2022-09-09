@@ -9,7 +9,6 @@ tree.setup({
     enable = true,
     ignore = false,
     timeout = 500,
-    update_cwd = true,
   },
   actions = {
     open_file = {

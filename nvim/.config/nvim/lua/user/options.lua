@@ -29,7 +29,7 @@ local options = {
   relativenumber = true,
   colorcolumn = "80",
 
-  guicursor = "",
+  --guicursor = "",
   tabstop = 4,
   softtabstop= 4,
   shiftwidth = 4,
