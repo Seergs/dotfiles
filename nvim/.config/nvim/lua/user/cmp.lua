@@ -10,11 +10,6 @@ if not snip_ok then
   return
 end
 
-local check_backspace = function()
-  local col = vim.fn.col(".") - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-end
-
 local kind_icons = {
   Text = "",
   Method = "m",
@@ -55,34 +50,12 @@ cmp.setup({
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-    ["<C-y>"] = cmp.config.disable,
+    --["<C-y>"] = cmp.config.disable,
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     },
-    ["<CR>"] = cmp.mapping.confirm { select = true },
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif check_backspace() then
-        fallback()
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
+    ["<C-y>"] = cmp.mapping.confirm { select = true },
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -94,11 +67,13 @@ cmp.setup({
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
+        cmp_tabnine = "[TN]"
       })[entry.source.name]
       return vim_item
     end,
   },
   sources = {
+    { name = 'cmp_tabnine' },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },

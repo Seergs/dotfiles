@@ -25,9 +25,6 @@ keymap("v", "p", "\"_dP", opts)
 -- Open the current file in the default program
 keymap("n", "<leader>x", ":!xdg-open %<cr><CR>", opts)
 
--- Quickly escape to normal mode
-keymap("i", "jj", "<esc>", opts)
-
 -- Quickly insertion of a trailing ; or , from insert mode
 keymap("i", ";;", "<Esc>A;<Esc>", opts)
 keymap("i", ",,", "<Esc>A,<Esc>", opts)
@@ -40,3 +37,5 @@ keymap("n", "<leader>5", ":bfirst<CR>:4bn", opts)
 
 keymap("n", "<leader>n",  ":NvimTreeToggle <CR>", opts)
 keymap("t", "<leader><Esc>", "<C-\\><C-n>", opts)
+
+keymap("i", "<C-c>", "<Esc>", opts)

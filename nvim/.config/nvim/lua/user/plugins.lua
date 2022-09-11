@@ -39,13 +39,13 @@ packer.init({
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
-  use({
-    "catppuccin/nvim",
-    as = "catppuccin"
-  })
+  -- use({
+  --   "catppuccin/nvim",
+  --   as = "catppuccin"
+  -- })
   use("nvim-lualine/lualine.nvim")
   use("kyazdani42/nvim-web-devicons")
-  use("akinsho/bufferline.nvim")
+  -- use("akinsho/bufferline.nvim")
   use("Raimondi/delimitMate")
   use("tpope/vim-commentary")
 
@@ -56,8 +56,6 @@ return packer.startup(function(use)
   use('hrsh7th/cmp-nvim-lsp')
   use('hrsh7th/cmp-nvim-lua')
   use('ray-x/lsp_signature.nvim')
-
-  use('mattn/emmet-vim')
 
   use('sbdchd/neoformat')
   use('L3MON4D3/LuaSnip')
@@ -70,8 +68,8 @@ return packer.startup(function(use)
   use('williamboman/nvim-lsp-installer')
   use('j-hui/fidget.nvim')
 
-  use('Xuyuanp/nerdtree-git-plugin')
-  use('kyazdani42/nvim-tree.lua')
+  -- use('Xuyuanp/nerdtree-git-plugin')
+  -- use('kyazdani42/nvim-tree.lua')
 
   use('mhinz/vim-startify')
 
@@ -83,7 +81,7 @@ return packer.startup(function(use)
 
   use('christoomey/vim-tmux-navigator')
 
-  use('sainnhe/everforest')
+  -- use('sainnhe/everforest')
 
   use({
     "nvim-treesitter/nvim-treesitter",
@@ -91,7 +89,7 @@ return packer.startup(function(use)
   })
   use('frazrepo/vim-rainbow')
 
-  use("karb94/neoscroll.nvim")
+  -- use("karb94/neoscroll.nvim")
 
   -- install without yarn or npm
   use({
@@ -100,6 +98,7 @@ return packer.startup(function(use)
   })
 
   use 'shaunsingh/nord.nvim'
+  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

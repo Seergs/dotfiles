@@ -6,21 +6,24 @@ end
 
 lualine.setup({
   options = {
-    theme = "catppuccin",
+    theme = "auto",
     component_separators = "",
-    section_separators = ""
+    section_separators = "",
+    alway_divide_middle = true,
   },
   sections = {
+    lualine_b = {
+      'branch'
+    },
     lualine_c = {
-      {
-        "filetype",
-        icon_only = true,
-      },
       {
         "filename",
         file_status = false,
         path = 1
       }
     },
+    lualine_x = {
+      'filetype'
+    }
   }
 })
