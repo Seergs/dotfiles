@@ -12,3 +12,5 @@ require("user.fidget")
 require('user.cmp')
 require('user.treesitter')
 require("user.neoscroll")
+
+vim.g.netrw_banner = 0

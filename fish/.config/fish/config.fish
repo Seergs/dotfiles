@@ -3,3 +3,4 @@ if status is-interactive
 end
 
 eval $(minikube docker-env)
+source $HOME/.cargo/env
