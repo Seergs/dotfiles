@@ -1,7 +1,7 @@
 local options = {
   number = true,
   mouse = "a",
-  clipboard = "unnamedplus",
+  clipboard = "unnamed",
   showcmd = true,
   ruler = true,
   cursorline = true,
@@ -13,7 +13,6 @@ local options = {
   writebackup = false,
   cmdheight = 1,
   updatetime = 50,
-  shortmess = "c",
   laststatus = 2,
   showmode = false,
   scrolloff = 10,
@@ -29,7 +28,7 @@ local options = {
   relativenumber = true,
   colorcolumn = "80",
 
-  --guicursor = "",
+  guicursor = "",
   tabstop = 4,
   softtabstop= 4,
   shiftwidth = 4,
@@ -38,6 +37,7 @@ local options = {
   autoindent = true,
   wrap = false,
   incsearch = true,
+  shortmess = "a",
 }
 
 for k, v in pairs(options) do

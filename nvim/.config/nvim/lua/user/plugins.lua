@@ -39,14 +39,8 @@ packer.init({
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
-  -- use({
-  --   "catppuccin/nvim",
-  --   as = "catppuccin"
-  -- })
   use("nvim-lualine/lualine.nvim")
   use("kyazdani42/nvim-web-devicons")
-  -- use("akinsho/bufferline.nvim")
-  use("Raimondi/delimitMate")
   use("tpope/vim-commentary")
 
   use("hrsh7th/nvim-cmp")
@@ -67,10 +61,6 @@ return packer.startup(function(use)
   use('neovim/nvim-lspconfig')
   use('williamboman/nvim-lsp-installer')
   use('j-hui/fidget.nvim')
-
-  -- use('Xuyuanp/nerdtree-git-plugin')
-  -- use('kyazdani42/nvim-tree.lua')
-
   use('mhinz/vim-startify')
 
   use('machakann/vim-sandwich')
@@ -81,17 +71,12 @@ return packer.startup(function(use)
 
   use('christoomey/vim-tmux-navigator')
 
-  -- use('sainnhe/everforest')
-
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
   use('frazrepo/vim-rainbow')
 
-  -- use("karb94/neoscroll.nvim")
-
-  -- install without yarn or npm
   use({
       "iamcco/markdown-preview.nvim",
       run = function() vim.fn["mkdp#util#install"]() end,
@@ -99,6 +84,9 @@ return packer.startup(function(use)
 
   use 'shaunsingh/nord.nvim'
   use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+  use 'mbbill/undotree'
+  use("gruvbox-community/gruvbox")
+  use 'ThePrimeagen/harpoon'
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

@@ -29,13 +29,18 @@ keymap("n", "<leader>x", ":!xdg-open %<cr><CR>", opts)
 keymap("i", ";;", "<Esc>A;<Esc>", opts)
 keymap("i", ",,", "<Esc>A,<Esc>", opts)
 
-keymap("n", "<leader>1", ":bfirst<CR>", opts)
-keymap("n", "<leader>2", ":bfirst<CR>:bn", opts)
-keymap("n", "<leader>3", ":bfirst<CR>:2bn", opts)
-keymap("n", "<leader>4", ":bfirst<CR>:3bn", opts)
-keymap("n", "<leader>5", ":bfirst<CR>:4bn", opts)
+-- Now handled with harpoon
+-- keymap("n", "<leader>1", ":bfirst<CR>", opts)
+-- keymap("n", "<leader>2", ":bfirst<CR>:bn", opts)
+-- keymap("n", "<leader>3", ":bfirst<CR>:2bn", opts)
+-- keymap("n", "<leader>4", ":bfirst<CR>:3bn", opts)
+-- keymap("n", "<leader>5", ":bfirst<CR>:4bn", opts)
 
-keymap("n", "<leader>n",  ":NvimTreeToggle <CR>", opts)
 keymap("t", "<leader><Esc>", "<C-\\><C-n>", opts)
 
 keymap("i", "<C-c>", "<Esc>", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
+keymap("n", "<leader>n", ":UndotreeShow<CR>", opts)
+
