@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 if [[ -z $STOW_FOLDERS ]]; then
   STOW_FOLDERS="fish kitty nvim scripts skhd tmux yabai zsh"
 fi
