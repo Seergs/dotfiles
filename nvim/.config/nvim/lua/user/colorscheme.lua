@@ -1,4 +1,4 @@
 vim.cmd([[
-  colorscheme nord
+  colorscheme gruvbox-baby
   hi Normal guibg=NONE ctermbg=NONE
 ]])

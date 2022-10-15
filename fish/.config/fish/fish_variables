@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export SHOPZ_BIN_DB2HOME:/Users/sergiosuarez/Documents/shopz/shopz\x2dbin/clidriver
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/Users/sergiosuarez/\x2elocal/share/z/data

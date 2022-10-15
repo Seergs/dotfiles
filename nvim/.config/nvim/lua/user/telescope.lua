@@ -22,7 +22,8 @@ telescope.setup({
   pickers = {
     find_files = {
       hidden = true,
-      theme="dropdown"
+      theme="dropdown",
+      file_ignore_patterns={"node_modules"}
     },
     live_grep = {
       theme="dropdown"

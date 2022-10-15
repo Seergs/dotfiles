@@ -1,6 +1,13 @@
 local ok, treesitter = pcall(require, "nvim-treesitter.configs")
+local ok_context, treesitter_context = pcall(require, "treesitter-context")
+
 if not ok then
   print("Treesitter not ready")
+  return
+end
+
+if not ok_context then
+  print("Treesitter context not ready")
   return
 end
 
@@ -25,3 +32,5 @@ incremental_selection = {
     enable = false
   }
 })
+
+treesitter_context.setup()

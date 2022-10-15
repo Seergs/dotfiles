@@ -1,7 +1,6 @@
 local fn = vim.fn
 
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-print(install_path)
 if fn.empty(fn.glob(install_path)) > 0 then
   print("Hello")
   PACKER_BOOTSTRAP = fn.system({
@@ -85,8 +84,9 @@ return packer.startup(function(use)
   use 'shaunsingh/nord.nvim'
   use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
   use 'mbbill/undotree'
-  use("gruvbox-community/gruvbox")
   use 'ThePrimeagen/harpoon'
+  use 'romgrk/nvim-treesitter-context'
+  use 'luisiacc/gruvbox-baby'
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
