@@ -10,9 +10,6 @@ alias v="nvim"
 alias vim="nvim"
 alias vimrc="nvim ~/.config/nvim/init.lua"
 alias zshrc="nvim ~/.zshrc"
-alias ll="exa --long --header --color=always --icons --all --no-permissions --no-user --git"
-alias ltree="tree -a"
-alias tmux="tmux -u"
 
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
 export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
