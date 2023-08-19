@@ -38,6 +38,7 @@ local options = {
   wrap = false,
   incsearch = true,
   shortmess = "a",
+  undofile = true,
 }
 
 for k, v in pairs(options) do

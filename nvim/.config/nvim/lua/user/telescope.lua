@@ -6,6 +6,7 @@ end
 
 telescope.setup({
   defaults = {
+    file_ignore_patterns={"node_modules", ".git",  "dist"},
     prompt_prefix = "",
     vimgrep_arguments = {
       'rg',
@@ -23,7 +24,6 @@ telescope.setup({
     find_files = {
       hidden = true,
       theme="dropdown",
-      file_ignore_patterns={"node_modules"}
     },
     live_grep = {
       theme="dropdown"
