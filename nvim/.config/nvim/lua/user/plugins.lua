@@ -87,7 +87,8 @@ return packer.startup(function(use)
     use 'ThePrimeagen/harpoon'
     use 'romgrk/nvim-treesitter-context'
     use 'luisiacc/gruvbox-baby'
-    use 'github/copilot.vim'
+    -- use 'github/copilot.vim'
+    use 'Exafunction/codeium.vim'
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'weirongxu/plantuml-previewer.vim'
     use 'tyru/open-browser.vim'
