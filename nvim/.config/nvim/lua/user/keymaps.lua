@@ -44,5 +44,3 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 
 keymap("n", "<leader>n", ":UndotreeShow<CR>", opts)
 keymap("n", "<CR>", ":noh<CR><CR>",opts)
-
-keymap("n", "<leader>m", ":Ex<CR>", opts)
