@@ -10,9 +10,15 @@ if not signature_ok then
     return
 end
 
-local installer_ok, installer = pcall(require, "nvim-lsp-installer")
-if not installer_ok then
-    print("LspInstaller not ready")
+local mason_ok, mason = pcall(require, "mason")
+if not mason_ok then
+    print("Mason not ready")
+    return
+end
+
+local mason_config_ok, mason_config = pcall(require, "mason-lspconfig")
+if not mason_config_ok then
+    print("Mason lsp config not ready")
     return
 end
 
@@ -31,8 +37,33 @@ signature.setup({
     }
 })
 
-local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities()) or {}
+mason.setup({
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
+    }
+  }
+})
 
+mason_config.setup({
+  ensure_installed = {
+    "tsserver",
+    "html",
+    "lua_ls",
+    "bashls",
+    "dockerls",
+    "gopls",
+    "jsonls",
+    "yamlls",
+    "jdtls",
+  },
+  automatic_installation = true
+})
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true }
@@ -72,14 +103,31 @@ local on_attach = function(client, bufnr)
     end
 end
 
-local lsp_opts = {}
-
-installer.on_server_ready(function(server)
-    server:setup(lsp_opts[server.name] or {
-        capabilities = capabilities,
-        on_attach = on_attach
-    })
-end)
+local lsp_opts = {
+  gopls = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {
+          gopls = {
+              gofumpt = true,
+          },
+      },
+      flags = {
+          debounce_text_changes = 150,
+      },
+  },
+  lua_ls = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {
+          Lua = {
+              diagnostics = {
+                  globals = { 'vim' }
+              }
+          }
+      }
+  }
+}
 
 local signs = {
     { name = "DiagnosticSignError", text = "" },
@@ -120,28 +168,15 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
     border = "rounded",
 })
 
+mason_config.setup_handlers({
+    function(server_name)
+        lspconfig[server_name].setup(lsp_opts[server_name] or {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            flags = {
+                debounce_text_changes = 150,
+            },
+        })
+    end
+})
 
-lsp_opts["gopls"] = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    settings = {
-        gopls = {
-            gofumpt = true,
-        },
-    },
-    flags = {
-        debounce_text_changes = 150,
-    },
-}
-
-lsp_opts["sumneko_lua"] = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-}

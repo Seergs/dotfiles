@@ -2,7 +2,6 @@ local fn = vim.fn
 
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-    print("Hello")
     PACKER_BOOTSTRAP = fn.system({
         "git",
         "clone",
@@ -14,13 +13,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     print("Installing packer close and reopen Neovim...")
     vim.cmd([[packadd packer.nvim]])
 end
-
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
 
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -58,7 +50,6 @@ return packer.startup(function(use)
     use('rhysd/committia.vim')
 
     use('neovim/nvim-lspconfig')
-    use('williamboman/nvim-lsp-installer')
     use('j-hui/fidget.nvim')
     use('mhinz/vim-startify')
 
@@ -92,6 +83,11 @@ return packer.startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'weirongxu/plantuml-previewer.vim'
     use 'tyru/open-browser.vim'
+
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+
+    use 'stevearc/dressing.nvim'
 
 
     if PACKER_BOOTSTRAP then

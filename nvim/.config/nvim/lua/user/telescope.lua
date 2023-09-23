@@ -4,10 +4,19 @@ if not ok then
   return
 end
 
+local actions = require("telescope.actions")
+
 telescope.setup({
   defaults = {
     file_ignore_patterns={"node_modules", ".git",  "dist"},
     prompt_prefix = "",
+    mappings = {
+      i = {
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+          ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist
+      }
+    },
     vimgrep_arguments = {
       'rg',
       '--color=never',
@@ -43,6 +52,7 @@ local r = require("user.remap").nnoremap
 
 r("<leader>p", ":Telescope find_files<cr>")
 r("<leader>f" , ":Telescope live_grep<cr>")
+r("<leader>g", ":Telescope grep_string<cr>")
 r("<leader>b", ":Telescope buffers<cr>")
 r("gr", ":Telescope lsp_references<cr>")
 r("gi" ,":Telescope lsp_implementations<cr>")
