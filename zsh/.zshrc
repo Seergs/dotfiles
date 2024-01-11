@@ -8,6 +8,8 @@ plugins=(git z zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
+eval "$(starship init zsh)"
+
 alias v="nvim"
 alias vim="nvim"
 alias vimrc="nvim ~/.config/nvim/init.lua"
@@ -26,8 +28,20 @@ if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
 
-# added by travis gem
-[ ! -s /Users/sergiosuarez/.travis/travis.sh ] || source /Users/sergiosuarez/.travis/travis.sh
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/sergiosuarez/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# Avoid running these commands when inside an IntelliJ environment
+if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
+
+
+    # Run tmux at startup
+    if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+      exec tmux new-session -A -s main
+    fi
+
+
+fi
+

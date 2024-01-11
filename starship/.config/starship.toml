@@ -1,0 +1,18 @@
+[directory]
+style = "blue bold"
+
+[git_branch]
+format = "[$branch]($style) "
+style = "bold white"
+
+[gradle]
+disabled = true
+
+[java]
+disabled = true
+
+[git_status]
+disabled = true
+
+[cmd_duration]
+disabled = true

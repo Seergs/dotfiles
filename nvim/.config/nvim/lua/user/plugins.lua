@@ -91,6 +91,8 @@ return packer.startup(function(use)
 
     use 'stevearc/oil.nvim'
 
+    use 'ThePrimeagen/git-worktree.nvim'
+
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
