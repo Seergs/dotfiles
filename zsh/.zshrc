@@ -14,14 +14,15 @@ alias v="nvim"
 alias vim="nvim"
 alias vimrc="nvim ~/.config/nvim/init.lua"
 alias zshrc="nvim ~/.zshrc"
+export EDITOR=nvim
 
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home
 export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.15.jdk/Contents/Home
+export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
 
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
-
-alias gce="git commit --allow-empty --message"
+alias java17='export JAVA_HOME=$JAVA_17_HOME'
 
 # source local zshrc
 if [ -f ~/.zshrc.local ]; then
@@ -36,12 +37,8 @@ export PATH="/Users/sergiosuarez/.rd/bin:$PATH"
 # Avoid running these commands when inside an IntelliJ environment
 if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
 
-
     # Run tmux at startup
     if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
       exec tmux new-session -A -s main
     fi
-
-
 fi
-

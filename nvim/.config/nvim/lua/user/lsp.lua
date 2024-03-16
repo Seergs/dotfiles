@@ -1,3 +1,9 @@
+local java_ok, java = pcall(require, "java")
+if not java_ok then
+  print("Java not ready")
+  return
+end
+
 local config_ok, lspconfig = pcall(require, 'lspconfig')
 if not config_ok then
   print("LspConfig not ready")
@@ -28,6 +34,7 @@ if not cmp_nvim_lsp_ok then
   return
 end
 
+
 signature.setup({
   floating_window = false,
   hint_prefix = "",
@@ -44,6 +51,10 @@ mason.setup({
       package_pending = "➜",
       package_uninstalled = "✗"
     }
+  },
+  registries = {
+    "github:nvim-java/mason-registry",
+    "github:mason-org/mason-registry",
   }
 })
 
@@ -57,7 +68,6 @@ mason_config.setup({
     "gopls",
     "jsonls",
     "yamlls",
-    "jdtls",
   },
   automatic_installation = true
 })
@@ -165,7 +175,6 @@ local config = {
     active = signs,
   },
   update_in_insert = true,
-  underline = true,
   severity_sort = true,
   float = {
     focusable = false,
@@ -187,6 +196,8 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
   border = "rounded",
 })
 
+java.setup()
+
 mason_config.setup_handlers({
   function(server_name)
     lspconfig[server_name].setup(lsp_opts[server_name] or {
@@ -197,4 +208,12 @@ mason_config.setup_handlers({
       },
     })
   end
+})
+
+require('lspconfig').jdtls.setup(lsp_opts.jdtls or {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
 })

@@ -17,4 +17,4 @@ require("oil").setup({
 
 local r = require("user.remap").nnoremap
 
-r("-", "<CMD>Oil<CR>")
+r("-", "<CMD>Oil --float<CR>")
