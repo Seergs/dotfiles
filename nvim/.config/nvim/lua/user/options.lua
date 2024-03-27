@@ -1,4 +1,5 @@
 local options = {
+
   number = true,
   mouse = "a",
   clipboard = "unnamed",

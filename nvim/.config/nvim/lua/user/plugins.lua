@@ -64,6 +64,8 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
+  use 'romgrk/nvim-treesitter-context'
+
   use('frazrepo/vim-rainbow')
 
   use({
@@ -75,7 +77,6 @@ return packer.startup(function(use)
   use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
   use 'mbbill/undotree'
   use 'ThePrimeagen/harpoon'
-  use 'romgrk/nvim-treesitter-context'
   use 'luisiacc/gruvbox-baby'
   -- use 'github/copilot.vim'
   use 'Exafunction/codeium.vim'
@@ -103,6 +104,13 @@ return packer.startup(function(use)
     },
   }
 
+  use {
+    'epwalsh/obsidian.nvim',
+    tag = "*",
+    requires = {
+      'nvim-lua/plenary.nvim',
+    }
+  }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

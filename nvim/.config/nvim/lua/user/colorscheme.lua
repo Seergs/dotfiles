@@ -6,3 +6,5 @@ vim.cmd([[
   colorscheme catppuccin
 ]])
 
+
+
