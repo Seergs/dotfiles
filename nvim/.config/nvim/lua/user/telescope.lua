@@ -14,7 +14,7 @@ telescope.setup({
       i = {
           ["<C-j>"] = actions.move_selection_next,
           ["<C-k>"] = actions.move_selection_previous,
-          ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist
+          -- ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist
       }
     },
     vimgrep_arguments = {
@@ -32,16 +32,16 @@ telescope.setup({
   pickers = {
     find_files = {
       hidden = true,
-      theme="dropdown",
+      theme="ivy",
     },
     live_grep = {
-      theme="dropdown"
+      theme="ivy"
     },
     lsp_references = {
-      theme = "dropdown"
+      theme = "ivy"
     },
     lsp_implementations = {
-      theme = "dropdown"
+      theme = "ivy"
     }
   }
 })

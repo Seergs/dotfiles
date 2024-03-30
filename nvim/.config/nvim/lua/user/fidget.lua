@@ -5,4 +5,9 @@ if not ok then
 end
 
 fidget.setup({
+    notification = {
+        window = {
+            winblend = 0
+        }
+    }
 })
