@@ -7,7 +7,9 @@
        ~/Documents/personal \
        ~/Documents/danube \
        ~/Documents/lmfs \
-       -mindepth 1 -maxdepth 1 -type d | fzf)
+       -mindepth 1 -maxdepth 1 -type d | fzf-tmux --height=40% --layout=reverse \
+       --prompt="Select project to connect to: " \
+   --border --no-info --border-label="tmux-sessionizer")
  fi
 
  if [[ -z $selected ]]; then
