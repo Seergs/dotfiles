@@ -197,6 +197,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 })
 
 -- java.setup()
+--
 
 mason_config.setup_handlers({
   function(server_name)
