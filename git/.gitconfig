@@ -1,0 +1,23 @@
+# This is Git's per-user configuration file.
+[user]
+	email = Sergio.Alvarez@ibm.com
+	name = SERGIO SUAREZ ALVAREZ
+
+[includeIf "gitdir:~/Documents/shopz/"]
+    path = config-work
+[includeIf "gitdir:~/Documents/danube/"]
+    path = config-work
+[includeIf "gitdir:~/Documents/personal/"]
+    path = config-personal
+[includeIf "gitdir:~/dotfiles/"]
+    path = config-personal
+
+[pull]
+	rebase = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	default = current
