@@ -1,25 +1,3 @@
-# [directory]
-# style = "blue bold"
-
-# [git_branch]
-# format = "[$branch]($style) "
-# style = "bold white"
-
-# [gradle]
-# disabled = true
-
-# [java]
-# disabled = true
-
-# [git_status]
-# disabled = true
-
-# [cmd_duration]
-# disabled = true
-
-# [nodejs]
-# disabled = true
-
 format = """
 $username\
 $hostname\
@@ -29,6 +7,7 @@ $git_state\
 $git_status\
 $line_break\
 $python\
+$kubernetes\
 $character"""
 
 [directory]
@@ -61,3 +40,14 @@ style = "bright-black"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[kubernetes]
+format = 'in [$symbol](blue) [$context](blue bold) [(\($namespace\))](white)'
+symbol = "󱃾"
+disabled = false
+contexts = [
+    { context_pattern = "minikube", style = "green", context_alias = "minikube"},
+    { context_pattern = ".*api-us-(east1|south1|south2)-dev.*", style = "green", context_alias = "nonprod  "},
+    { context_pattern = ".*api-us-(east1|south1|south2)-prod.*", style = "red", context_alias = "production 🚨🚨🚨"},
+]
+
