@@ -119,9 +119,6 @@ return packer.startup(function(use)
       "nvim-telescope/telescope.nvim",
       "kyazdani42/nvim-web-devicons",
     },
-    config = function()
-      require "octo".setup()
-    end
   }
 
   if PACKER_BOOTSTRAP then
