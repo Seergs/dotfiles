@@ -2,12 +2,9 @@
  if [[ $# -eq 1 ]]; then
      selected=$1
  else
-     selected=$(find ~/Documents  \
-       ~/Documents/shopz \
-       ~/Documents/personal \
-       ~/Documents/danube \
-       ~/Documents/lmfs \
-       -mindepth 1 -maxdepth 1 -type d | fzf-tmux -p 55%,60%  --layout=reverse \
+     directories=$(find ~/Documents/shopz ~/Documents/personal ~/Documents/danube ~/Documents/lmfs -mindepth 1 -maxdepth 1 -type d)
+     directories=$(echo -e "~/Documents/shopz\n~/Documents/personal\n~/Documents/danube\n~/Documents/lmfs"; echo "$directories")
+     selected=$(echo "$directories" | fzf-tmux -p 55%,60%  --layout=reverse \
        --prompt="Select project to connect to: " \
    --border --no-info --border-label="Projects")
  fi
