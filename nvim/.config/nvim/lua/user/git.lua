@@ -1,6 +1,7 @@
 require('git-worktree').setup()
 require('telescope').load_extension('git_worktree')
 require("octo").setup()
+require("gitpad").setup()
 -- require("gitsigns").setup()
 
 local r = require("user.remap").nnoremap

@@ -7,9 +7,14 @@ require("catppuccin").setup({
     }
 })
 
+
 vim.cmd([[
-  colorscheme kanagawa
+  colorscheme randomhue
 ]])
+
+-- vim.cmd([[
+--   colorscheme kanagawa
+-- ]])
 
 -- vim.cmd([[
 --   colorscheme nord

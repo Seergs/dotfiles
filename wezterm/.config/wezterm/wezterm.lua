@@ -16,12 +16,12 @@ return {
 	font_size = 16.0,
 	macos_window_background_blur = 19,
 	window_background_opacity = 1.0,
-    window_padding = {
-        left = 30,
-        right = 30,
-        top = 20,
-        bottom = 10,
-    },
+    -- window_padding = {
+    --     left = 30,
+    --     right = 30,
+    --     top = 20,
+    --     bottom = 10,
+    -- },
     enable_tab_bar = false,
     window_close_confirmation = 'NeverPrompt',
     window_decorations = 'RESIZE',

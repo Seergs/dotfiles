@@ -8,11 +8,26 @@ require("mini.surround").setup()
 require("mini.starter").setup()
 require("mini.jump").setup()
 require("mini.visits").setup()
-require("mini.pick").setup()
+local pick = require("mini.pick")
+pick.setup({
+  mappings = {
+    choose_marked = "<C-q>",
+  },
+  source = {
+    choose_marked = function(items)
+      pick.default_choose_marked(items)
+      pick.stop()
+    end,
+  }
+})
 require("mini.extra").setup()
 
 require("mini.diff").setup()
--- require("mini.jump2d").setup()
+require("mini.jump2d").setup({
+  view = {
+    dim = true
+  }
+})
 
 function _G.open_mini_files()
   files.open(vim.api.nvim_buf_get_name(0))
@@ -31,3 +46,4 @@ r("gi", "<CMD>Pick lsp scope='implementation'<CR>")
 r("gs", "<CMD>Pick lsp scope='document_symbol'<CR>")
 r("<leader>ss", "<CMD>Pick spellsuggest<CR>")
 r("<leader>t", "<CMD>Pick grep pattern='(TODO|FIXME|HACK|NOTE)'<CR>")
+r("<CR>", "<CMD>lua MiniJump2d.start(MiniJump2d.builtin_opts.word_start)<CR>")

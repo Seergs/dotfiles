@@ -124,6 +124,7 @@ return packer.startup(function(use)
 
   use 'echasnovski/mini.nvim'
   use "rebelot/kanagawa.nvim"
+  use "yujinyuz/gitpad.nvim"
 
 
 
