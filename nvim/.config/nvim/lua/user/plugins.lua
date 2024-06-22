@@ -33,6 +33,7 @@ return packer.startup(function(use)
   use("nvim-lualine/lualine.nvim")
   use("kyazdani42/nvim-web-devicons")
   use("tpope/vim-commentary")
+  use("lewis6991/gitsigns.nvim")
 
   use("hrsh7th/nvim-cmp")
   use("hrsh7th/cmp-buffer")
@@ -50,9 +51,6 @@ return packer.startup(function(use)
 
   use('neovim/nvim-lspconfig')
   use('j-hui/fidget.nvim')
-  use('(mhinz)/vim-startify')
-
-  use('machakann/vim-sandwich')
 
   use('nvim-lua/plenary.nvim')
   use('nvim-telescope/telescope.nvim')
@@ -77,7 +75,7 @@ return packer.startup(function(use)
   use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
   use 'mbbill/undotree'
   use 'ThePrimeagen/harpoon'
-  use 'luisiacc/gruvbox-baby'
+  use { "ellisonleao/gruvbox.nvim" }
   -- use 'github/copilot.vim'
   use 'Exafunction/codeium.vim'
   use { "catppuccin/nvim", as = "catppuccin" }
@@ -91,18 +89,21 @@ return packer.startup(function(use)
 
   use 'ThePrimeagen/git-worktree.nvim'
 
-  use { 'nvim-java/nvim-java',
-    requires = {
-      'nvim-java/lua-async-await',
-      'nvim-java/nvim-java-core',
-      'nvim-java/nvim-java-test',
-      'nvim-java/nvim-java-dap',
-      'MunifTanjim/nui.nvim',
-      'neovim/nvim-lspconfig',
-      'mfussenegger/nvim-dap',
-      'williamboman/mason.nvim',
-    },
-  }
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+
+  -- use { 'nvim-java/nvim-java',
+  --   requires = {
+  --     'nvim-java/lua-async-await',
+  --     'nvim-java/nvim-java-core',
+  --     'nvim-java/nvim-java-test',
+  --     'nvim-java/nvim-java-dap',
+  --     'MunifTanjim/nui.nvim',
+  --     'neovim/nvim-lspconfig',
+  --     'mfussenegger/nvim-dap',
+  --     'williamboman/mason.nvim',
+  --   },
+  -- }
 
   use {
     'epwalsh/obsidian.nvim',
@@ -120,6 +121,11 @@ return packer.startup(function(use)
       "kyazdani42/nvim-web-devicons",
     },
   }
+
+  use 'echasnovski/mini.nvim'
+  use "rebelot/kanagawa.nvim"
+
+
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

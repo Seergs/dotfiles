@@ -1,9 +1,3 @@
-local java_ok, java = pcall(require, "java")
-if not java_ok then
-  print("Java not ready")
-  return
-end
-
 local config_ok, lspconfig = pcall(require, 'lspconfig')
 if not config_ok then
   print("LspConfig not ready")
@@ -34,6 +28,8 @@ if not cmp_nvim_lsp_ok then
   return
 end
 
+local dap  = require("dap")
+
 
 signature.setup({
   floating_window = false,
@@ -53,7 +49,7 @@ mason.setup({
     }
   },
   registries = {
-    "github:nvim-java/mason-registry",
+    -- "github:nvim-java/mason-registry",
     "github:mason-org/mason-registry",
   }
 })
@@ -68,6 +64,7 @@ mason_config.setup({
     "gopls",
     "jsonls",
     "yamlls",
+    "jdtls"
   },
   automatic_installation = true
 })
@@ -210,6 +207,16 @@ mason_config.setup_handlers({
     })
   end
 })
+
+dap.configurations.java = {
+    {
+        type = 'java',
+        request = 'attach',
+        name = 'Attach remote',
+        hostName = 'localhost',
+        port = 9999,
+    },
+}
 
 -- require('lspconfig').jdtls.setup(lsp_opts.jdtls or {
 --   capabilities = capabilities,

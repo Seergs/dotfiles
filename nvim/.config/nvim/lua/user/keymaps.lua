@@ -36,7 +36,7 @@ keymap("i", ",,", "<Esc>A,<Esc>", opts)
 -- keymap("n", "<leader>4", ":bfirst<CR>:3bn", opts)
 -- keymap("n", "<leader>5", ":bfirst<CR>:4bn", opts)
 
-keymap("t", "<leader><Esc>", "<C-\\><C-n>", opts)
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 
 keymap("i", "<C-c>", "<Esc>", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)

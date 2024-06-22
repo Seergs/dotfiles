@@ -50,12 +50,12 @@ telescope.load_extension "file_browser"
 
 local r = require("user.remap").nnoremap
 
-r("<leader>p", ":Telescope find_files<cr>")
-r("<leader>f" , ":Telescope live_grep<cr>")
-r("<leader>g", ":Telescope grep_string<cr>")
-r("<leader>b", ":Telescope buffers<cr>")
-r("gr", ":Telescope lsp_references<cr>")
-r("gi" ,":Telescope lsp_implementations<cr>")
-r("<leader>dl", ":Telescope diagnostics<cr>")
-r("gd", ":Telescope lsp_definitions<cr>")
-r("<leader>s", ":Telescope lsp_document_symbols<cr>")
+-- r("<leader>p", ":Telescope find_files<cr>")
+-- r("<leader>f" , ":Telescope live_grep<cr>")
+-- r("<leader>g", ":Telescope grep_string<cr>")
+-- r("<leader>b", ":Telescope buffers<cr>")
+-- r("gr", ":Telescope lsp_references<cr>")
+-- r("gi" ,":Telescope lsp_implementations<cr>")
+-- r("<leader>dl", ":Telescope diagnostics<cr>")
+-- r("gd", ":Telescope lsp_definitions<cr>")
+-- r("<leader>s", ":Telescope lsp_document_symbols<cr>")

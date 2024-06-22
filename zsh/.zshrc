@@ -35,7 +35,7 @@ export PATH="/Users/sergiosuarez/.rd/bin:$PATH"
 
 
 # Avoid running these commands when inside an IntelliJ environment
-if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
+if [ -z "$INTELLIJ_ENVIRONMENT_READER" ] && [ -z "$VSCODE_IPC_HOOK_CLI" ]; then
 
     # Run tmux at startup
     if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then

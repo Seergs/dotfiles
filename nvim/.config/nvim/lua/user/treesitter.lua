@@ -11,13 +11,19 @@ if not ok_context then
   return
 end
 
+local function ts_disable(_, bufnr)
+    return vim.api.nvim_buf_line_count(bufnr) > 5000
+end
+
 treesitter.setup({
   ensure_installed = "all",
   sync_install = false,
   ignore_install = {},
   highlight = {
     enable = true,
-    disable = {},
+    disable = function(lang, bufnr)
+        return lang == "cmake" or ts_disable(lang, bufnr)
+    end,
   },
 incremental_selection = {
     enable = true,

@@ -7,10 +7,10 @@ local act = wezterm.action
 
 
 return {
-    background = {
-        w.get_wallpaper(),
-        b.get_background(),
-    },
+    -- background = {
+    --     w.get_wallpaper(),
+    --     b.get_background(),
+    -- },
 
 	color_scheme = 'Catppuccin Mocha',
 	font_size = 16.0,
