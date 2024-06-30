@@ -2,23 +2,25 @@
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
-
 plugins=(git z zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 
+NOTES_DIR="$HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/notes"
+
 alias v="nvim"
 alias vim="nvim"
 alias vimrc="nvim ~/.config/nvim/init.lua"
 alias zshrc="nvim ~/.zshrc"
+alias notes="cd $NOTES_DIR && nvim ."
 export EDITOR=nvim
 
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home
 export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.15.jdk/Contents/Home
 export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
@@ -42,3 +44,19 @@ if [ -z "$INTELLIJ_ENVIRONMENT_READER" ] && [ -z "$VSCODE_IPC_HOOK_CLI" ]; then
       exec tmux new-session -A -s main
     fi
 fi
+
+# History
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_find_no_dups
+
+# Shell integrations
+eval "$(fzf --zsh)"

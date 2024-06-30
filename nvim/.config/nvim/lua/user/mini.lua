@@ -8,6 +8,8 @@ require("mini.surround").setup()
 require("mini.starter").setup()
 require("mini.jump").setup()
 require("mini.visits").setup()
+require("mini.splitjoin").setup()
+-- require("mini.git").setup()
 local pick = require("mini.pick")
 pick.setup({
   mappings = {
@@ -34,11 +36,10 @@ function _G.open_mini_files()
   files.reveal_cwd()
 end
 
--- r("<C-p>", "<CMD>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>")
 r("<C-p>", "<CMD>lua open_mini_files()<CR>")
-r("<leader>p", "<CMD>Pick files tool='git'<CR>")
+r("<leader>p", "<CMD>Pick files tool='rg'<CR>")
 r("<leader>b", "<CMD>Pick buffers<CR>")
-r("<leader>f", "<CMD>Pick grep_live tool='git'<CR>")
+r("<leader>f", "<CMD>Pick grep_live tool='rg'<CR>")
 r("<leader>dl", "<CMD>Pick diagnostic<CR>")
 r("gr", "<CMD>Pick lsp scope='references'<CR>")
 r("gd", "<CMD>Pick lsp scope='definition'<CR>")

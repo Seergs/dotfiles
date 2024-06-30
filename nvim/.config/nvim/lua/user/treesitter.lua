@@ -1,15 +1,15 @@
 local ok, treesitter = pcall(require, "nvim-treesitter.configs")
-local ok_context, treesitter_context = pcall(require, "treesitter-context")
+-- local ok_context, treesitter_context = pcall(require, "treesitter-context")
 
 if not ok then
   print("Treesitter not ready")
   return
 end
 
-if not ok_context then
-  print("Treesitter context not ready")
-  return
-end
+-- if not ok_context then
+--   print("Treesitter context not ready")
+--   return
+-- end
 
 local function ts_disable(_, bufnr)
     return vim.api.nvim_buf_line_count(bufnr) > 5000
@@ -39,4 +39,4 @@ incremental_selection = {
   }
 })
 
-treesitter_context.setup()
+-- treesitter_context.setup()

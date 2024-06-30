@@ -62,7 +62,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
-  use 'romgrk/nvim-treesitter-context'
+  -- use 'romgrk/nvim-treesitter-context'
 
   use('frazrepo/vim-rainbow')
 
@@ -86,8 +86,6 @@ return packer.startup(function(use)
   use 'stevearc/dressing.nvim'
 
   use 'stevearc/oil.nvim'
-
-  use 'ThePrimeagen/git-worktree.nvim'
 
   use 'mfussenegger/nvim-dap'
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }

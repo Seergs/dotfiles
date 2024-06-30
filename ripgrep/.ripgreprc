@@ -1,0 +1,9 @@
+--hidden
+
+--glob
+!.git/*
+
+--smart-case
+
+--line-number
+--column

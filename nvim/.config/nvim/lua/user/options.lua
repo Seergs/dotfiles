@@ -40,6 +40,7 @@ local options = {
   incsearch = true,
   shortmess = "a",
   undofile = true,
+  conceallevel = 1
 }
 
 for k, v in pairs(options) do
