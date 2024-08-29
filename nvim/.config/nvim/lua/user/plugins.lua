@@ -88,7 +88,7 @@ return packer.startup(function(use)
   use 'stevearc/oil.nvim'
 
   use 'mfussenegger/nvim-dap'
-  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 
   -- use { 'nvim-java/nvim-java',
   --   requires = {
@@ -130,4 +130,3 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
-

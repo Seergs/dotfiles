@@ -28,8 +28,6 @@ if not cmp_nvim_lsp_ok then
   return
 end
 
-local dap  = require("dap")
-
 
 signature.setup({
   floating_window = false,
@@ -75,14 +73,15 @@ capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 local on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "i", "<C-b>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "i", "<C-b>", "<cmd>lua vim.lsp.buf.completion()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gs", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dn", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>'
     ,
@@ -134,25 +133,38 @@ local lsp_opts = {
       }
     }
   },
-  -- jdtls = {
-  --   capabilities = capabilities,
-  --   on_attach = on_attach,
-  --   flags = {
-  --     debounce_text_changes = 150
-  --   },
-  --   settings = {
-  --     java = {
-  --       configuration = {
-  --         runtimes = {
-  --           {
-  --             name = "JavaSE-1.8",
-  --             path = "/Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk"
-  --           }
-  --         }
-  --       },
-  --     }
-  --   }
-  -- }
+  jdtls = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150
+    },
+    settings = {
+      java = {
+        format = {
+          settings = {
+            url = "https://raw.githubusercontent.com/redhat-developer/vscode-java/master/formatters/eclipse-formatter.xml",
+            profile = "GoogleStyle",
+            -- You can customize the formatter settings here
+            settings = {
+              tabSize = 4,
+              indentSize = 4,
+              continuationIndentSize = 4,
+              insertSpaces = true,
+            }
+          },
+        },
+        -- configuration = {
+        --   runtimes = {
+        --     {
+        --       name = "JavaSE-1.8",
+        --       path = "/Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk"
+        --     }
+        --   }
+        -- },
+      }
+    }
+  }
 }
 
 local signs = {
@@ -193,8 +205,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
   border = "rounded",
 })
 
--- java.setup()
---
+-- require("java").setup()
 
 mason_config.setup_handlers({
   function(server_name)
@@ -208,15 +219,6 @@ mason_config.setup_handlers({
   end
 })
 
-dap.configurations.java = {
-    {
-        type = 'java',
-        request = 'attach',
-        name = 'Attach remote',
-        hostName = 'localhost',
-        port = 9999,
-    },
-}
 
 -- require('lspconfig').jdtls.setup(lsp_opts.jdtls or {
 --   capabilities = capabilities,

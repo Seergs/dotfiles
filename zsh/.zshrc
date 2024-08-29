@@ -41,7 +41,7 @@ if [ -z "$INTELLIJ_ENVIRONMENT_READER" ] && [ -z "$VSCODE_IPC_HOOK_CLI" ]; then
 
     # Run tmux at startup
     if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-      exec tmux new-session -A -s main
+      tmux new-session -A -s main
     fi
 fi
 
@@ -57,6 +57,8 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt hist_find_no_dups
+
+set -o vi
 
 # Shell integrations
 eval "$(fzf --zsh)"
