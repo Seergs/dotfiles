@@ -1,16 +1,6 @@
-require("catppuccin").setup({
-    transparent_background = true,
-    integrations = {
-        cmp = true,
-        treesitter = true,
-        fidget = true
-    }
-})
-
-
-vim.cmd([[
-  colorscheme randomhue
-]])
+-- vim.cmd([[
+--   colorscheme randomhue
+-- ]])
 
 -- vim.cmd([[
 --   colorscheme kanagawa
@@ -19,8 +9,12 @@ vim.cmd([[
 -- vim.cmd([[
 --   colorscheme nord
 -- ]])
+--
 
--- vim.cmd([[
---   colorscheme gruvbox
--- ]])
+vim.g.gruvbox_material_background = 'soft'
+vim.g.gruvbox_material_better_performance = 1
+
+vim.cmd([[
+  colorscheme gruvbox-material
+]])
 

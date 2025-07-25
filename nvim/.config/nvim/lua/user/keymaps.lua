@@ -44,3 +44,7 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 
 keymap("n", "<leader>n", ":UndotreeShow<CR>", opts)
 keymap("n", "<CR>", ":noh<CR><CR>",opts)
+
+-- TODO: Fix these
+keymap("n", "<C-h>", "<cmd>cnext<CR>zz", opts)
+keymap("n", "<C-l>", "<cmd>cprev<CR>zz", opts)

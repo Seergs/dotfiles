@@ -13,6 +13,9 @@ obsidian.setup({
       path = path
     }
   },
-  notes_subdir = "0 - inbox",
-  new_notes_location = "0 - inbox",
+  notes_subdir = "00-09 System/01 Inbox",
+  new_notes_location = "00-09 System/01 Inbox",
+  note_id_func = function (title)
+      return title
+  end
 })
