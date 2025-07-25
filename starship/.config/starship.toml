@@ -48,6 +48,7 @@ disabled = false
 contexts = [
     { context_pattern = "minikube", style = "green", context_alias = "minikube"},
     { context_pattern = ".*api-us-(east1|south1|south2)-dev.*", style = "green", context_alias = "nonprod  "},
+    { context_pattern = ".*api.*nonprod.*", style = "green", context_alias = "nonprod  "},
     { context_pattern = ".*api-us-(east1|south1|south2)-prod.*", style = "red", context_alias = "production 🚨🚨🚨"},
 ]
 

@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(git z zsh-autosuggestions)
@@ -16,15 +14,17 @@ alias vimrc="nvim ~/.config/nvim/init.lua"
 alias zshrc="nvim ~/.zshrc"
 alias notes="cd $NOTES_DIR && nvim ."
 export EDITOR=nvim
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home
 export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.15.jdk/Contents/Home
 export JAVA_17_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
-export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+export JAVA_21_HOME=/Library/Java/JavaVirtualMachines/openjdk-21.jdk/Contents/Home
 
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 alias java17='export JAVA_HOME=$JAVA_17_HOME'
+alias java21='export JAVA_HOME=$JAVA_21_HOME'
 
 # source local zshrc
 if [ -f ~/.zshrc.local ]; then
@@ -62,3 +62,7 @@ set -o vi
 
 # Shell integrations
 eval "$(fzf --zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
